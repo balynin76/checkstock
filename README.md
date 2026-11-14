@@ -5,9 +5,6 @@
 Веб-приложение для учёта остатков на складе: товары (SKU), склады,
 приход и расход, резервирования, отгрузки FBO и журнал операций.
 
-Бэкенд — FastAPI + SQLite, фронтенд — статическая страница со встроенного
-сервера. Приложение поднимается одной командой в Docker.
-
 ## Развитие: переход на PostgreSQL(пока избыточно)
 
 Проект построен так, что замена SQLite на PostgreSQL потребует минимальных
@@ -76,7 +73,7 @@ docker compose run --rm app sh -c "pip install -r requirements-dev.txt && pytest
 ## Стек
 
 - Python 3.12, FastAPI, Uvicorn
-- SQLite
+- SQLite(возможен быстрый переход на PostgreSQL)
 - pytest, ruff
 - Docker / docker compose
 - GitHub Actions (CI)
