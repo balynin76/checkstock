@@ -56,8 +56,8 @@ docker compose up --build
 
 После запуска:
 
-- веб-интерфейс: <http://127.0.0.1:8000>
-- Swagger UI: <http://127.0.0.1:8000/docs>
+- веб-интерфейс: <http://localhost:8000>
+- Swagger UI: <http://localhost:8000/docs>
 
 ## Тесты
 
