@@ -34,15 +34,15 @@
 
 ## API
 
-| Метод | Путь | Описание |
-|-------|------|----------|
-| GET | `/api/skus` | список товаров |
-| GET | `/api/warehouses` | список складов |
-| GET | `/api/stocks` | остатки |
-| GET | `/api/transfers` | перемещения |
-| GET | `/api/reservations` | резервирования |
-| GET | `/api/fbo-shipments` | отгрузки FBO |
-| GET | `/api/journal` | журнал операций |
+API описывает полный операционный цикл склада: справочники, приёмка, перемещения, резервирования и отгрузки FBO, с журналом всех операций.
+
+-    Справочники — товары и склады: просмотр и создание (GET/POST /api/skus, GET/POST /api/warehouses), удаление склада (DELETE /api/warehouses/{id}).
+-    Остатки — текущие количества по товарам и складам (GET /api/stocks).
+-    Приёмка — оприходование товара на склад (POST /api/receipts).
+-    Перемещения — двухфазный цикл: создать перемещение между складами (POST /api/transfers), затем подтвердить приёмку на стороне получателя (POST /api/transfers/{id}/accept).
+-    Резервирования — жизненный цикл заказа: создать резерв (POST /api/reservations), отгрузить (POST /api/reservations/{id}/ship) или отменить (POST /api/reservations/{id}/cancel).
+-    FBO — создание и приёмка отгрузок маркетплейса (POST /api/fbo-shipments, POST /api/fbo-shipments/{id}/accept).
+ -   Журнал — единый аудит всех операций (GET /api/journal).
 
 Полный список методов с описаниями — на `/docs` после запуска.
 
